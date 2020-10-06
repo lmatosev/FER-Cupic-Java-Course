@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body bgcolor="{$= "background" "7F7F7F" @tparamGet $}">
+ <h1> Home</h1>
+ Scripts:
+ <p>  <a href="http://www.localhost.com:5721/scripts/osnovni.smscr">Osnovni</a> </p>
+ <p>  <a href="http://www.localhost.com:5721/scripts/brojPoziva.smscr">Broj poziva</a>  </p>
+ <p>  <a href="http://www.localhost.com:5721/scripts/fibonaccih.smscr">Fibonacci</a> </p>
+ 
+Workers:
+ <p>  <a href="http://www.localhost.com:5721/hello">Hello</a> </p>
+ <p>  <a href="http://www.localhost.com:5721/cw">Circle</a> </p> 
+ 
+Calculate sum:
+<p></p>
+ <form action="calc" method="get"> 
+ Parameter a:<br>
+  <input type="text" name="a"><br>
+ Parameter b:<br>
+  <input type="text" name="b"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<p></p>
+<p></p>
+
+ <form action="setbgcolor" method="get">
+<p> Choose background color: </p>
+ <select name="bgcolor">
+  <option value="000000">Black</option>
+  <option value="FFFFFF">White</option>
+  <option value="FF0000">Red</option>
+  <option value="00FF00">Green</option>
+  <option value="0000FF">Blue</option>
+  <option value="FFFF00">Yellow</option>
+  <option value="CA2C92">Royal Fuchsia</option>
+  <option value="E9967A">Dark Salmon</option>
+</select>
+<input type="submit" value="Submit"> 
+</form>
+</body>
+
+</html>

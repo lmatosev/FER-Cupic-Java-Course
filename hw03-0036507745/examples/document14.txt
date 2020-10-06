@@ -1,0 +1,4 @@
+this is\\ sample \\\\\\ text and shou\\ld be \{$= valid124215i2sd$}
+also this for loop {$   FOR name "shou\\ld\\\\" be " \" val\\id \" "  $}
+{$end$}
+

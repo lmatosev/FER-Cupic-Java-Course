@@ -1,0 +1,6 @@
+this is {$FOR variable i 1 2$}
+{$end$}
+
+sample text
+
+{$eNd$}

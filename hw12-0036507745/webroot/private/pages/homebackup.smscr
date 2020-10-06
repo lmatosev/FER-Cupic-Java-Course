@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+   <style>
+    body {background-color: #{$= "background" "7F7F7F" @tparamGet $};}
+   </style>
+ </head>
+ <body>
+  Igor je vrlo vrlo debeo
+  </body>
+
+</html>

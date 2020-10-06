@@ -1,0 +1,75 @@
+U nastavku se nalaze kopirane recenzije kolega. Na samom dnu ovog dokumenta nalazi se moj komentar što je sve popravljeno.
+
+PRVI ZADATAK
+-lijepo napisan zadatak, zadovoljava minimalne uvjete
+DRUGI ZADATAK
+-prilikom rada s višedretvenosti se može dogoditi ConcurrentModificationException koju nisi hvatio i dešavaju se slučajevi kada se ona prikaže korisniku
+-slika se raspada prilikom proširivanja --> OCJENA 1, no vrlo je jednostavno rješenje, prilikom računanja offseta dovoljno je zamijeniti y*height sa y*width. U osnovnom primjeru nije dolazilo do pogreške jer je slika bila u obliku kvadrata
+
+TREĆI ZADATAK
+-sve radi kako je i zamišljeno, uz male pogreške prilikom računanja refleksije, no one su zanemarive
+
+Ukupan dojam
+Jako lijepo napisana dz, kod je čitljiv i uredan, a komentari su dovoljno jasni. Nažalost ocjena je 1 zbog pogreške u drugom zadatku, ali je srećom sitna greška koja se jednostavno ispravlja
+
+
+
+Ovu zadaću ocjenjujem ocjenom 1 zbog narušenog minimalnog uvjeta u zadatku 2.
+
+#1
+Nisi formatirao ispis vektora na broj decimala. To se radi ovako
+
+DecimalFormat f=new DecimalFormat("#0.000000");
+return "(" + f.format(x) + ", " + f.format(y) + ", " + f.format(z) + ")";
+
+#2
+Program inicijalno dobro radi
+Prilikom povećavanja i smanjivanja slike i ostalih operacija koje nudi fractal viewer dolazi do bacanja iznimaka
+Kod povećanja i smanjenja, slika se neispravno crta. Razlog je pogrešno postavljen offset. Treba biti
+int offset = y * width; i radi za minimalne
+
+#3
+Razredi RayCaster trebaju biti u drugom paketu od sphere, popravi kod ispravka
+Nemam prigovora osim toga
+
+Nažalost, ocjena 1 jer 2. zadatak ne ispunjava minimalne uvjete. Slika se raspadne u trake kad se maksimizira prozor. Kada se prozor malo proširi program baca ConcurrentModificationException.
+
+1. zadatak:
+-----------
+Vector3
+-------
+- u dokumentaciji metode toString (i sličnim situacijama) ne moraš navoditi {@inheritDoc} u ovakvim situacijama, automatski se naslijedi dokumentacija.
+Vector3 toArray si mogao napisati u jednoj liniji: return new double[] { x, y, z };
+
+Complex
+-------
+- Uvijek delegirati drugom konstruktoru kad je to moguče, npr. u ovom razredu defaultni konstruktor bi mogao pozvati this(0, 0).
+- multiply, divide, add, sub bacaaju NullPointerException, nije dokumentirano.
+- metoda root nema ispravni povratni tip, treba biti List<Complex> umjesto Complex[].
+
+
+2. zadatak:
+-----------
+- Zbog ovog zadatka ide ocjena 1.
+- Kada maksimiziram prozor slika se raspadne u trake, problem je što krivo racunas offset, treba ici * width, a ne height.
+- Kada malo proširim prozor izbaci ConcurrentModificationException i slika se uopce ne iscrta.
+To je zato što si stavio listu rezultati kao člansku varijablu umjesto lokalnu.
+
+- Bolje bi bilo da si preskakao invalid inpute i pitao ponovno da se unese trenutni korijen nego da si terminirao program.
+-  Uputa: "All classes, methods and fields (public, private or otherwise) must have appropriate javadoc"
+- Nedostaje dokumentacija za main(), članske varijable od FractalNewtonProducer,  članske varijable od Job.
+
+DaemonicThreadFactory() -> metode se pišu malim pocetnim slovom.
+
+3.zadatak:
+----------
+- RayCaster, RayCasterParallel i RayCasterParallel2 su u krivom paketu. (samo obrisati .model)
+- Slika nije u potpunosti ispravno iscrtana, pogledaj svijetlu liniju koja se javlja na dnu donje kugle što je posljedica krivo izračunate refleksije.
+- Magični brojevi 255 i 15 se protežu kroz kod.
+- Mislim da je bilo bolje da se ThreadJob napravi kao lokalna klasa unutar metode produce(), ne bi morao slati sve te silne parametre, bilo bi puno manje koda, ovako
+sam ThreadJob ima oko 150 linija.
+
+
+
+Komentar: U drugom zadatku popravljena je greška do koje dolazi pri proširivanju prozora. Više ne dolazi do iznimaka i slika se pravilno iscrtava. Također, popravio sam neke stvari u kodu poslova dretvi pa se sad cijela slika znatno brže nacrta nego prije.
+Popravljen je ispis, odnosno formatiranje vektora. Raycaster razredi stavljeni su u ispravne pakete. Popravljena je povratna vrijednoste metode root iz razreda Complex.

@@ -1,0 +1,7 @@
+1	The Beatles	https://www.youtube.com/watch?v=z9ypq6_5bsg
+2	Pink Floyd	https://www.youtube.com/watch?v=YR5ApYxkU-U
+3	Queen	https://www.youtube.com/watch?v=fJ9rUzIMcZQ
+4	Guns N' Roses	https://www.youtube.com/watch?v=1w7OgIMMRc4
+5	Metallica	https://www.youtube.com/watch?v=tAGnKpE4NCI
+6	AC/DC	https://www.youtube.com/watch?v=v2AC41dglnM
+7	Bob Marley & The Wailers	https://www.youtube.com/watch?v=vdB-8eLEW8g

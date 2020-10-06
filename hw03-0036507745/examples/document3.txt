@@ -1,0 +1,3 @@
+{$    FoR sedam "volim javu" -3.4$}
+{$= štefica dvijeŠtefice 3 "štefice"$}
+{$end$} 

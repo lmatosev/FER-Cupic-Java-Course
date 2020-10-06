@@ -1,0 +1,5 @@
+Java je moj najdraži predmet
+{$      = i ovo je "najbolja" zadaća na svijetu $}
+{$for dva tri dva$}
+{$  =  "  \"1941\"  \n \r \t "   $}
+{$end$}

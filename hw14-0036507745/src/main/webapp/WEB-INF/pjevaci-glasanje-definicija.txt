@@ -1,0 +1,7 @@
+1	Freddie Mercury	https://www.youtube.com/watch?v=kRcVACHAwcE
+2	Elvis Presley	https://www.youtube.com/watch?v=bJhlCNTszcQ
+3	Michael Jackson	https://www.youtube.com/watch?v=oRdxUFDoQe0
+4	Frank Sinatra	https://www.youtube.com/watch?v=LiILUT_Px84
+5	David Bowie	https://www.youtube.com/watch?v=iYYRH4apXDo
+6	Bob Marley	https://www.youtube.com/watch?v=jGqrvn3q1oo
+7	Miro Boem	https://www.youtube.com/watch?v=xspl5YtIwn4

@@ -1,0 +1,60 @@
+camels.jpg
+Image of two camels
+camels, animals
+elephants.jpg
+Elephants in the wild
+elephants, animals
+koala.jpg
+Cute koala
+koala, animals
+lamb.jpg
+Little white lamb
+lamb, animals
+liger.jpg
+Cross between a lion and a tiger
+lion, tiger, animals
+lion.jpg
+A majestic lion
+lion, animals
+makaki.jpg
+Makaki monkey
+monkey, animals
+wolf.jpg
+Wolf in a forest
+wolf, animals
+bobmarley.jpg
+Iconic reggae singer
+reggae, singers
+miroslav-skoro.jpg
+Future Croatian president
+president, singers
+ray-charles.jpg
+Iconic soul singer
+soul, singers
+stoka.jpg
+One of the most famous Croatian rap artists
+rap, singers
+tudman.jpg
+First croatian president
+president
+kornjaca.jpg
+Image of a turtle
+turtle, animals
+pas.jpg
+Image of a puppy
+dog, animals
+ovan.jpg
+Image of a ram
+ram, animals
+krokodil.jpg
+Image of a crocodile
+crocodile, animals
+morski-pas.jpg
+Image of a shark
+shark, animals
+skorpion.jpg
+Image of a scorpion
+scorpion, animals
+mesic.jpg
+Image of the worst croatian president
+president

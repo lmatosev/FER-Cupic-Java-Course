@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+<meta charset="UTF-8">
+
+
+<title>Gallery</title>
+
+
+
+<style>
+h1 {
+	font-style: italic;
+	font-size: 65px;
+	font-color: orange;
+}
+
+h1:HOVER {
+	font-style: italic;
+	color: blue;
+}
+
+p {
+	font-style: italic;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 40px;
+}
+
+p:HOVER {font-style italic;
+	color: blue;
+}
+
+body {
+	background-color: lightblue;
+}
+
+.button {
+	display: inline-block;
+	border-radius: 4px;
+	background-color: orange;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 28px;
+	padding: 20px;
+	width: 200px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.button span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.button:hover span {
+	padding-right: 25px;
+}
+
+.button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/htmlescaping.js"></script>
+<script type="text/javascript">
+<!--
+	$(document)
+			.ready(
+					function() {
+						$
+								.ajax({
+									url : "rest/gallery",
+									dataType : "json",
+									success : function(data) {
+										let tagList = data;
+										let html = "";
+										if (tagList.length == 0) {
+											html = "No results...";
+										} else {
+											for (let i = 0; i < tagList.length; i++) {
+												html += "<button class=\"button\" onclick='getThumbnailsForTag(\""
+														+ tagList[i]
+														+ "\")'><span>"
+														+ tagList[i]
+														+ "</span></button>";
+
+											}
+										}
+										$("#tags").html(html);
+									}
+								});
+					});
+
+	function getThumbnailsForTag(tag) {
+
+		$.ajax({
+			url : "rest/gallery/" + tag,
+			data : {
+				"tag" : tag
+			},
+			dataType : "json",
+			success : function(data) {
+				var thumbnails = data;
+				var html = "";
+				for (var i = 0; i < thumbnails.length; i += 2) {
+					html += " <img src=\"draw?path=" + thumbnails[i]
+							+ "\" onclick=drawImage(\"" + thumbnails[i + 1]
+							+ "\")> ";
+
+				}
+				$("#image").empty();
+				$("#thumbnails").html(html);
+			}
+		});
+
+	}
+
+	function drawImage(name) {
+
+		$.ajax({
+			url : "rest/gallery/img/" + name,
+			dataType : "json",
+			success : function(data) {
+				let image = data;
+				let html = "";
+				html += "<p>" + image[0] + "</p>";
+				html += "<p>" + image[1] + "</p>";
+				html += "<img src=\"draw?path=" + image[2] + "\"> ";
+
+				$("#image").html(html);
+			}
+		});
+
+	}
+//-->
+</script>
+
+</head>
+
+
+
+<body>
+
+	<h1>Gallery</h1>
+
+	<div id="tags">&nbsp;</div>
+	<p></p>
+	<div id="thumbnails">&nbsp;</div>
+	<p></p>
+	<div id="image">&nbsp;</div>
+
+
+
+</body>
+
+</html>

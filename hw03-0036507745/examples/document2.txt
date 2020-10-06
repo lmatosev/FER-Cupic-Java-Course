@@ -1,0 +1,7 @@
+{$=zagreb 25 -3.4 "trideset i \"pet\""$} this
+input is obviously
+valid \{$for 31 23 4 25$}
+{$for java i 3 3.41252$}
+2347289
+{$eNd$}
+
